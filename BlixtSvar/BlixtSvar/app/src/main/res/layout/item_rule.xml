@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="#1AFFFFFF">
+
+    <!-- Horisontell rad: checkbox + knappar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Checkbox till vänster -->
+        <CheckBox
+            android:id="@+id/cbEnabled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="TA BORT" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnLoadToEditor"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="REDIGERA" />
+    </LinearLayout>
+
+    <!-- Regeltext UNDER knapparna: vit bakgrund, svart text, centrerad -->
+    <TextView
+        android:id="@+id/tvRuleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:padding="1dp"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:maxLines="6"
+        android:ellipsize="end" />
+
+</LinearLayout>

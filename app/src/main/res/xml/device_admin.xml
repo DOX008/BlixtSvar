@@ -1,0 +1,17 @@
+<device-admin xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-policies>
+        <!-- Tillåter din app att inaktivera skärm av och att låsa enheten -->
+        <policy android:name="android.app.device_admin.permission.RESET_PASSWORD"/>
+        <policy android:name="android.app.device_admin.permission.WIPE_DATA"/>
+        <policy android:name="android.app.device_admin.permission.BLOCK_UNBLOCK"/>
+
+        <!-- Ytterligare policys kan läggas till baserat på dina krav -->
+    </uses-policies>
+
+    <permission android:name="android.permission.BIND_DEVICE_ADMIN"
+        android:protectionLevel="signature" />
+
+    <description>
+        En beskrivning av vad din Device Admin-app gör.
+    </description>
+</device-admin>
