@@ -5,4 +5,10 @@
     <string name="ignored_text_hint">Exempel: du är bokad</string>
     <string name="ignored_text_save">Spara</string>
     <string name="ignored_text_saved">Sparad</string>
+    <string name="tts_read_sms">Läs upp inkommande SMS</string>
+    <string name="tts_engine_label">Talsyntesmotor</string>
+    <string name="tts_voice_label">Svensk röst</string>
+    <string name="tts_voice_auto">Automatiskt (bästa lokala svenska rösten)</string>
+    <string name="tts_rate_label">Uppläsningshastighet: %1$s×</string>
+    <string name="tts_sample">Så här låter rösten.</string>
 </resources>

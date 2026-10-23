@@ -136,6 +136,16 @@ class MainActivity : AppCompatActivity() {
         updatePatternModeUi()
         ensureDefaultsSeededOnce()
         renderRules()
+
+        ttsPanel = com.lillans.image.blixtsvar.tts.TtsPanelController(this, findViewById(R.id.ttsPanel))
+        ttsPanel.bind()
+    }
+
+    private lateinit var ttsPanel: com.lillans.image.blixtsvar.tts.TtsPanelController
+
+    override fun onDestroy() {
+        if (::ttsPanel.isInitialized) ttsPanel.release()
+        super.onDestroy()
     }
 
     private val defaults = RulePresets.defaultRules
