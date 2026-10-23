@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Huvudfärg (knappar, radio, rubriker) -->
+    <color name="colorPrimary">#1565C0</color> <!-- Blå -->
+    <color name="colorPrimaryDark">#0D47A1</color>
+    <color name="colorAccent">#1976D2</color>
+
+    <!-- Textfärg -->
+    <color name="colorOnPrimary">#FFFFFF</color> <!-- Vit -->
+    <color name="colorOnBackground">#FFFFFF</color>
+    <color name="colorTextPrimary">#FFFFFF</color>
+
+    <!-- Bakgrund -->
+    <color name="background">#121212</color> <!-- mörk -->
+
+    <color name="overlayScrim">#99000000</color>
+
+    <!-- Kortfärger -->
+    <color name="cardDark">#1E1E26</color>      <!-- mörk -->
+    <color name="cardMid">#4F5BA7</color>       <!-- blå/lila -->
+    <color name="cardStroke">#40FFFFFF</color>  <!-- svag linje -->
+
+    <!-- Textfärger -->
+    <color name="overlayTitle">#B9ACE6</color>  <!-- lila titel -->
+    <color name="overlayText">#E6E6E6</color>   <!-- ljus text -->
+    <color name="statusYes">#24C147</color>     <!-- grön JA -->
+    <color name="statusNo">#FF5252</color>      <!-- röd NEJ -->
+    <color name="overlayCardBg">#1E1E26</color>
+    <color name="buttonBlue">#80000000</color>
+    <color name="blixOrange">#FFA500</color>
+
+</resources>

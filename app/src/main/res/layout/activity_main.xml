@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!-- Scroll-innehåll ovanför Hjälp-knappen -->
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnHelp">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- IGNORERA-TEXT -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/etIgnoredText"
+                android:text="@string/ignored_text_label"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etIgnoredText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/ignored_text_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:minHeight="48dp" />
+
+                <Button
+                    android:id="@+id/btnSaveIgnored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/ignored_text_save" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvIgnoredStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:textAppearance="?attr/textAppearanceBodySmall" />
+
+            <!-- INMATNING -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Skapa tidsregel"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Fyll i passets start och slut så skapas en JA-regel automatiskt."
+                android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:labelFor="@id/btnPickStartTime"
+                        android:text="Starttid (HH:MM)" />
+
+                    <Button
+                        android:id="@+id/btnPickStartTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="21:00"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:labelFor="@id/btnPickEndTime"
+                        android:text="Sluttid (HH:MM)" />
+
+                    <Button
+                        android:id="@+id/btnPickEndTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="07:00"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Svar som skickas" />
+
+            <EditText
+                android:id="@+id/etTimeReply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Skriv svaret, till exempel JA"
+                android:text="JA"
+                android:inputType="textCapSentences|textMultiLine"
+                android:minLines="1"
+                android:maxLines="4" />
+
+            <Button
+                android:id="@+id/btnCreateTimeRule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Skapa tidsregel" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="16dp"
+                android:background="?android:attr/listDivider"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Avancerat: egen regel eller regex"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/etPattern"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Avancerat: fras eller regex"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/etReply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Avancerat: svarstext"
+                android:inputType="text" />
+
+            <!-- Rad: Checkboxar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <CheckBox
+                    android:id="@+id/cbLiteral"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Vanlig fras (ingen regex)" />
+
+                <CheckBox
+                    android:id="@+id/cbIgnoreCase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Ignorera versaler" />
+            </LinearLayout>
+
+            <!-- Match-typ -->
+            <TextView
+                android:id="@+id/tvMatchTypeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Matchtyp för vanlig fras"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tvMatchTypeHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Välj hur den vanliga frasen ska hittas i SMS:et."
+                android:textAppearance="?attr/textAppearanceBodySmall" />
+
+            <RadioGroup
+                android:id="@+id/rgMatchType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rbExactWord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Exakt ord (t.ex. \\bhej\\b)"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/rbWordStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Början av ord (t.ex. \\bhej)" />
+
+                <RadioButton
+                    android:id="@+id/rbAnywhere"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mitt i ord (matchar överallt)" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btnBatterySettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Unrestricted battery"
+                android:layout_marginTop="8dp"/>
+
+            <Button
+                android:id="@+id/btnAutostartSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tillåt autostart"
+                android:layout_marginTop="8dp"/>
+
+            <Button
+                android:id="@+id/btnLockRecentsHelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lås app i senaste appar"
+                android:layout_marginTop="8dp"/>
+            <Button
+                android:id="@+id/btnAddOrUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Spara avancerad regel"
+                android:layout_marginTop="8dp"/>
+
+            <!-- TEST -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="16dp"
+                android:background="?android:attr/listDivider"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Testa regelmatchning"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/etTestMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Skriv ett inkommande sms (ex: Hej, är jag bokad?)"
+                android:inputType="textMultiLine" />
+
+            <Button
+                android:id="@+id/btnTest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Testa"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/tvTestResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingTop="6dp"/>
+
+            <!-- LISTA -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="16dp"
+                android:background="#33FFFFFF"/>
+
+            <TextView
+                android:id="@+id/tvListTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aktiva regler"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/rulesContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Hjälp-knapp i botten -->
+    <Button
+        android:id="@+id/btnHelp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Hjälp!"
+        android:layout_margin="12dp"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

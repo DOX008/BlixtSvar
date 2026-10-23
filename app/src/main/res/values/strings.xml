@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BlixtSvar</string>
+    <string name="open_blixtsvar">BlixtSvar</string>
+    <string name="ignored_text_label">Ignorera SMS som innehåller texten</string>
+    <string name="ignored_text_hint">Exempel: du är bokad</string>
+    <string name="ignored_text_save">Spara</string>
+    <string name="ignored_text_saved">Sparad</string>
+</resources>
